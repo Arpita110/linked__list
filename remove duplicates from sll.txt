@@ -1,0 +1,25 @@
+REMOVE DUPLICATES FROM SORTED LIST
+Input: head = [1,1,2,3,3]
+Output: [1,2,3]
+
+ListNode* deleteDuplicates(ListNode* head) {
+       if(head==NULL)
+            return NULL;
+        
+        ListNode *curr = head;
+        while(curr != NULL)
+        {
+            if((curr->next != NULL) && curr->val == curr->next->val)
+            {
+                
+                ListNode *nodeTodelete = curr->next;
+                curr->next=nodeTodelete->next;
+                delete(nodeTodelete);
+                
+            }
+            else
+                curr = curr->next;
+        }
+        return head;
+        
+    }
