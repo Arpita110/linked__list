@@ -1,0 +1,22 @@
+NODES SWAP
+Input: head = [7,9,6,6,7,8,3,0,9,5], k = 5
+Output: [7,9,6,6,8,7,3,0,9,5]
+
+
+ListNode* swapNodes(ListNode* head, int k) {
+      ListNode * curr=head;
+        ListNode * first=NULL;
+        ListNode * sec=head;
+        for(int i=0;i<k;i++)
+        {
+            first=curr;
+            curr=curr->next;
+        }
+        while(curr!=NULL)
+        {
+            curr=curr->next;
+            sec=sec->next;
+        }
+        swap(sec->val,first->val);
+        return head;
+    }
