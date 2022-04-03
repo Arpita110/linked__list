@@ -1,0 +1,12 @@
+MID NODE OF LL
+ ListNode* middleNode(ListNode* head) {
+     ListNode* first=head;
+        ListNode* sec=head;
+        while(first!=NULL&&first->next!=NULL)
+        {
+            sec=sec->next;
+            first=first->next->next;
+        }
+        
+        return sec;
+    }
