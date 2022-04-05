@@ -1,0 +1,34 @@
+REVERSE NODE IN K GRPS
+Input: head = [1,2,3,4,5], k = 2
+Output: [2,1,4,3,5]
+
+ListNode* reverseKGroup(ListNode* head, int k) {
+        if(head==NULL)
+            return head;
+        ListNode* curr=head;
+        int count=1;
+        while(curr->next!=NULL&&count<k)
+        {
+            count++;
+            curr=curr->next;
+        }
+        if(count<k)
+            return head;
+         ListNode*temp=curr->next;
+        curr->next=NULL;
+         ListNode*prev=NULL;
+         ListNode*next=head;
+        curr=head;
+        while(curr!=NULL)
+        {
+            next=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=next;
+        }
+        ListNode* list= reverseKGroup(temp,k);
+        head->next=list;
+        return prev;
+        
+        
+    }
