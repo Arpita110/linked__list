@@ -1,4 +1,4 @@
-MID NODE OF LL
+//MID NODE OF LL
  ListNode* middleNode(ListNode* head) {
      ListNode* first=head;
         ListNode* sec=head;
